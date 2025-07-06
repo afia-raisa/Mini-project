@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PathStarter - Student Job Board</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      <span class="logo-green">Path</span><span class="logo-dark">Starter</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Find Jobs</a></li>
+      <li><a href="#">Login</a></li>
+      <li><a href="#" class="btn">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Find Your First <span class="highlight">Remote</span> Job</h1>
+    <p>PathStarter connects ambitious students with remote opportunities from forward-thinking companies. Start your career journey today.</p>
+    <div class="hero-buttons">
+      <a href="#" class="btn green">Find Jobs as Student</a>
+      <a href="#" class="btn white">Post Jobs as Employer</a>
+    </div>
+  </section>
+
+  <!-- Search Bar -->
+  <section class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search jobs by title or company..." />
+  </section>
+
+  <!-- Category Filter -->
+  <section class="category-filter">
+    <label for="categorySelect">Filter by Category:</label>
+    <select id="categorySelect">
+      <option value="all">All</option>
+      <option value="internship">Internship</option>
+      <option value="part-time">Part-time</option>
+      <option value="freelance">Freelance</option>
+    </select>
+  </section>
+
+  <!-- Job Listings -->
+  <section class="job-listings">
+    <h2>Latest Job Listings</h2>
+    <ul>
+      <li data-category="internship">
+        <h3><a href="job-details.html?id=1">Frontend Internship</a></h3>
+        <p>Company: CodeLab</p>
+        <p>Location: Remote</p>
+      </li>
+      <li data-category="part-time">
+        <h3><a href="job-details.html?id=2">Content Writer (Part-time)</a></h3>
+        <p>Company: EduVerse</p>
+        <p>Location: Remote</p>
+      </li>
+      <li data-category="freelance">
+        <h3><a href="job-details.html?id=3">Flutter Developer</a></h3>
+        <p>Company: AppNest</p>
+        <p>Location: Remote</p>
+      </li>
+      <li data-category="freelance">
+        <h3><a href="job-details.html?id=4">Backend Developer (Node.js)</a></h3>
+        <p>Company: DevHive</p>
+        <p>Location: Remote</p>
+      </li>
+      <li data-category="internship">
+        <h3><a href="job-details.html?id=5">UI/UX Design Intern</a></h3>
+        <p>Company: PixelCraft</p>
+        <p>Location: Remote</p>
+      </li>
+      <li data-category="part-time">
+        <h3><a href="job-details.html?id=6">Data Entry Assistant</a></h3>
+        <p>Company: InfoBridge</p>
+        <p>Location: Remote</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Post Job Form -->
+  <section class="post-job">
+    <h2>Post a New Job</h2>
+    <form id="jobForm">
+      <label>Job Title:</label>
+      <input type="text" name="title" required />
+
+      <label>Company Name:</label>
+      <input type="text" name="company" required />
+
+      <label>Location:</label>
+      <input type="text" name="location" required />
+
+      <label>Category:</label>
+      <input type="text" name="category" required />
+
+      <label>Description:</label>
+      <textarea name="description" rows="4" required></textarea>
+
+      <label>Contact Email:</label>
+      <input type="email" name="email" required />
+
+      <button type="submit">Submit Job</button>
+    </form>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What Students Say</h2>
+    <div class="testimonial-card">
+      <p>"PathStarter helped me land my first remote internship. Super easy to use!"</p>
+      <h4>— Ridi, Computer Science Student</h4>
+    </div>
+    <div class="testimonial-card">
+      <p>"I found a freelance writing gig that fits perfectly with my class schedule."</p>
+      <h4>— Manaf, English Major</h4>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+  <p>© 2025 PathStarter. All rights reserved.</p>
+  <p>
+  <a href="about.html">About</a> |
+  <a href="contact.html">Contact</a> |
+  <a href="privacy.html">Privacy Policy</a>
+  </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const jobItems = document.querySelectorAll(".job-listings li");
+
+    searchInput.addEventListener("input", function () {
+      const keyword = this.value.toLowerCase();
+      jobItems.forEach((item) => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(keyword) ? "block" : "none";
+      });
+    });
+
+    const categorySelect = document.getElementById("categorySelect");
+
+    categorySelect.addEventListener("change", function () {
+      const selected = this.value;
+      jobItems.forEach((item) => {
+        const category = item.getAttribute("data-category");
+        item.style.display = (selected === "all" || category === selected) ? "block" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>

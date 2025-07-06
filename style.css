@@ -1,0 +1,295 @@
+.logo-green {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.logo-dark {
+  color: #333;
+  font-weight: bold;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-links .btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.hero .highlight {
+  color: #4caf50;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.hero-buttons .btn {
+  padding: 12px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn.green {
+  background-color: #4caf50;
+  color: white;
+}
+
+.btn.white {
+  background-color: white;
+  color: #4caf50;
+  border: 2px solid #4caf50;
+}
+
+/* Search Bar */
+.search-bar {
+  text-align: center;
+  margin: 30px 0;
+}
+
+#searchInput {
+  width: 60%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Job Listings */
+.job-listings {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.job-listings h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.job-listings ul {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.job-listings li {
+  background: white;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Post Job Form */
+.post-job {
+  background-color: #f0f8ff;
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+
+.post-job h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #45a049;
+}
+.job-details {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.job-details h2 {
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+/* 📱 Mobile & Tablet Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .hero-buttons .btn {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    text-align: center;
+  }
+
+  #searchInput {
+    width: 90%;
+  }
+
+  .job-listings ul,
+  form {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .job-details {
+    width: 90%;
+    margin: 40px auto;
+  }
+}
+.testimonials {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.testimonial-card {
+  max-width: 600px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-left: 5px solid  #4caf50;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 6px;
+}
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+footer a {
+  color: #a9fdac;
+  text-decoration: none;
+  margin: 0 10px;
+}
+.category-filter {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#categorySelect {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.page-content {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.page-content h2 {
+  color: #4caf50;
+  margin-bottom: 20px;
+}
+
+.page-content p {
+  line-height: 1.6;
+  font-size: 16px;
+}

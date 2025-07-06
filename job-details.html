@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Details</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <span class="logo-green">Path</span><span class="logo-dark">Starter</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+
+  <section class="job-details">
+    <h2 id="jobTitle">Loading...</h2>
+    <p><strong>Company:</strong> <span id="jobCompany"></span></p>
+    <p><strong>Location:</strong> <span id="jobLocation"></span></p>
+    <p><strong>Description:</strong></p>
+    <p id="jobDescription"></p>
+  </section>
+
+  <script>
+    const jobs = {
+  1: {
+    title: "Frontend Internship",
+    company: "CodeLab",
+    location: "Remote",
+    description: "Work with HTML, CSS, and JavaScript to build UI components."
+  },
+  2: {
+    title: "Content Writer (Part-time)",
+    company: "EduVerse",
+    location: "Remote",
+    description: "Write blog posts and educational content for students."
+  },
+  3: {
+    title: "Flutter Developer",
+    company: "AppNest",
+    location: "Remote",
+    description: "Build cross-platform mobile apps using Flutter and Dart."
+  },
+  4: {
+    title: "Backend Developer (Node.js)",
+    company: "DevHive",
+    location: "Remote",
+    description: "Develop REST APIs and manage databases using Node.js and Express."
+  },
+  5: {
+    title: "UI/UX Design Intern",
+    company: "PixelCraft",
+    location: "Remote",
+    description: "Assist in designing user interfaces and improving user experience."
+  },
+  6: {
+    title: "Data Entry Assistant",
+    company: "InfoBridge",
+    location: "Remote",
+    description: "Enter and manage data in spreadsheets and internal systems."
+  }
+};
+
+    const params = new URLSearchParams(window.location.search);
+    const jobId = params.get("id");
+
+    const job = jobs[jobId];
+
+    if (job) {
+      document.getElementById("jobTitle").textContent = job.title;
+      document.getElementById("jobCompany").textContent = job.company;
+      document.getElementById("jobLocation").textContent = job.location;
+      document.getElementById("jobDescription").textContent = job.description;
+    } else {
+      document.getElementById("jobTitle").textContent = "Job not found.";
+    }
+  </script>
+
+</body>
+</html>
